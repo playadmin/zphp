@@ -218,7 +218,6 @@ class upload
      */
     private function setFileInfo($i)
     {
-        $this->mapping[$i]['name'] = $this->getFileName($i);
         $this->mapping[$i]['path'] = "{$this->savePath}/{$this->mapping[$i]['name']}";
         $this->mapping[$i]['src'] = U_HOME . substr($this->mapping[$i]['path'], LEN_IN);
     }
