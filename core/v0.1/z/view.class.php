@@ -454,8 +454,13 @@ class view
             $html_file = "{$html_path}/{$run[1]}.html";
         } else {
             if (is_array($flag)) {
-                foreach ($flag as $k) {
-                    $query[$k] = ROUTE['query'][$k] ?? '';
+                $i = 0;
+                foreach ($flag as $k=>$v) {
+                    if ($k === $i++) {
+                        $query[$v] = ROUTE['query'][$v] ?? '';
+                    } else {
+                        $query[$k] = $v;
+                    }
                 }
             } else {
                 $query = ROUTE['query'];
